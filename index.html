@@ -4,16 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>sha9 sha9 | Web Designer</title>
+  <link rel="icon" href="favicon.ico" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
-
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5XY1234567"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-JBHP48S461');
-  </script>
 
   <style>
     * {
@@ -25,38 +17,39 @@
 
     body {
       background-color: #121212;
-      color: #ffffff;
-      line-height: 1.6;
+      color: #f0f0f0;
+      line-height: 1.7;
     }
 
     header {
-      padding: 2rem;
-      text-align: center;
       background-color: #1e1e1e;
+      padding: 2.5rem 1.5rem;
+      text-align: center;
       animation: fadeInDown 1s ease forwards;
     }
 
     header img.logo {
-      height: 80px;
+      height: 70px;
       margin-bottom: 1rem;
     }
 
     header h1 {
-      font-size: 2.5rem;
+      font-size: 2.8rem;
       color: #00f7ff;
+      font-weight: 600;
     }
 
     nav {
       display: flex;
       justify-content: center;
       gap: 2rem;
-      margin-top: 1rem;
+      margin-top: 1.5rem;
     }
 
     nav a {
       color: #ffffff;
       text-decoration: none;
-      font-weight: bold;
+      font-weight: 600;
       transition: color 0.3s ease;
     }
 
@@ -66,9 +59,20 @@
 
     section {
       padding: 4rem 2rem;
-      max-width: 900px;
-      margin: 0 auto;
+      max-width: 1000px;
+      margin: auto;
       animation: fadeInUp 1s ease forwards;
+    }
+
+    section h2 {
+      font-size: 2rem;
+      color: #00f7ff;
+      margin-bottom: 1rem;
+    }
+
+    section p {
+      font-size: 1.1rem;
+      color: #ccc;
     }
 
     .portfolio-grid {
@@ -81,13 +85,13 @@
     .project {
       position: relative;
       overflow: hidden;
-      border-radius: 10px;
+      border-radius: 12px;
+      box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
     }
 
     .project img {
       width: 100%;
-      display: block;
-      border-radius: 10px;
+      border-radius: 12px;
       transition: transform 0.3s ease;
     }
 
@@ -100,7 +104,7 @@
       bottom: 0;
       left: 0;
       right: 0;
-      background: rgba(0, 0, 0, 0.7);
+      background: rgba(0, 0, 0, 0.75);
       color: #fff;
       padding: 1rem;
       transform: translateY(100%);
@@ -111,20 +115,29 @@
       transform: translateY(0);
     }
 
-    .contact a {
+    .contact a,
+    .order a {
+      display: inline-block;
       color: #00f7ff;
-      text-decoration: none;
       font-size: 1.2rem;
+      text-decoration: none;
+      margin-top: 1rem;
+      transition: opacity 0.3s;
+    }
+
+    .contact a:hover,
+    .order a:hover {
+      opacity: 0.8;
     }
 
     .social-links {
-      margin-top: 1rem;
+      margin-top: 1.5rem;
     }
 
     .social-links a {
       color: #ffffff;
-      margin-right: 1rem;
-      font-size: 1.2rem;
+      margin-right: 1.5rem;
+      font-size: 1.3rem;
       transition: color 0.3s ease;
     }
 
@@ -137,6 +150,7 @@
       padding: 2rem;
       background-color: #1e1e1e;
       color: #888;
+      font-size: 0.9rem;
       animation: fadeInUp 1s ease forwards;
     }
 
@@ -144,6 +158,7 @@
       scroll-behavior: smooth;
     }
 
+    /* Animation */
     @keyframes fadeInUp {
       0% {
         opacity: 0;
@@ -165,6 +180,39 @@
         transform: translateY(0);
       }
     }
+
+    /* Rating stars */
+    .rating {
+      padding: 4rem 2rem;
+      max-width: 1000px;
+      margin: auto;
+      animation: fadeInUp 1s ease forwards;
+      text-align: center;
+    }
+
+    .rating h2 {
+      font-size: 2rem;
+      color: #00f7ff;
+      margin-bottom: 1rem;
+    }
+
+    .star-rating {
+      font-size: 2rem;
+      color: #444;
+      cursor: pointer;
+    }
+
+    .star-rating .star {
+      padding: 0 5px;
+      color: #888;
+      transition: color 0.3s;
+    }
+
+    .star-rating .star:hover,
+    .star-rating .star.hovered,
+    .star-rating .star.selected {
+      color: #ffd700;
+    }
   </style>
 </head>
 <body>
@@ -175,35 +223,66 @@
     <nav>
       <a href="#about">About</a>
       <a href="#portfolio">Portfolio</a>
+      <a href="#order">Order</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
 
   <section id="about">
     <h2>About Me</h2>
-    <p>I’m a creative web designer with a passion for clean and modern digital experiences. I design responsive, user-focused websites that bring ideas to life.</p>
+    <p>
+      I’m a web designer passionate about building beautiful, user-friendly websites that deliver results.
+      I combine modern aesthetics with smart UX to create experiences that stand out.
+    </p>
   </section>
 
-  <section id="portfolio" class="portfolio">
+  <section id="portfolio">
     <h2>My Work</h2>
-    <p>Here are some of my featured web design projects.</p>
+    <p>Check out a few of my featured projects below.</p>
     <div class="portfolio-grid">
       <div class="project">
         <img src="creative-landing-page.png" alt="Creative Landing Page">
         <div class="overlay">
           <h3>Creative Landing Page</h3>
-          <p>Elegant landing page with strong branding.</p>
+          <p>Responsive landing page with bold design and strong branding.</p>
+        </div>
+      </div>
+      <div class="project">
+        <img src="news-platform.png" alt="News Platform">
+        <div class="overlay">
+          <h3>News Platform</h3>
+          <p>Modern Arabic news site designed for readability and accessibility.</p>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- Rating Section -->
+  <section id="rating" class="rating">
+    <h2>Rate My Work</h2>
+    <p>Click the stars to leave a rating:</p>
+    <div class="star-rating">
+      <span class="star" data-value="1">&#9733;</span>
+      <span class="star" data-value="2">&#9733;</span>
+      <span class="star" data-value="3">&#9733;</span>
+      <span class="star" data-value="4">&#9733;</span>
+      <span class="star" data-value="5">&#9733;</span>
+    </div>
+  </section>
+
+  <section id="order" class="order">
+    <h2>Place a Commande</h2>
+    <p>If you'd like to order a custom website or design, message me directly on Instagram:</p>
+    <a href="https://instagram.com/abdelkder_2.3" target="_blank">📩 Send Order on Instagram</a>
+  </section>
+
   <section id="contact" class="contact">
     <h2>Contact Me</h2>
-    <p>Let’s work together! Email me at:</p>
-    <a href="mailto:thabetabdelkader050@gmail.com">thabetabdelkader050@gmail.com</a>
+    <p>Want to get in touch? Feel free to reach out through Instagram:</p>
+    <a href="https://instagram.com/abdelkder_2.3" target="_blank">📱 Instagram: @abdelkder_2.3</a>
+
     <div class="social-links">
-      <p>Follow me on social media:</p>
+      <p>Follow me:</p>
       <a href="https://instagram.com/abdelkder_2.3" target="_blank">Instagram</a>
     </div>
   </section>
@@ -212,8 +291,32 @@
     <p>&copy; 2025 sha9 sha9. All rights reserved.</p>
   </footer>
 
+  <!-- Star Rating Script -->
+  <script>
+    const stars = document.querySelectorAll('.star');
+    stars.forEach((star, index) => {
+      star.addEventListener('mouseover', () => {
+        stars.forEach((s, i) => s.classList.toggle('hovered', i <= index));
+      });
+      star.addEventListener('mouseout', () => {
+        stars.forEach((s) => s.classList.remove('hovered'));
+      });
+      star.addEventListener('click', () => {
+        stars.forEach((s, i) => s.classList.toggle('selected', i <= index));
+        alert(`Thank you! You rated ${index + 1} star(s).`);
+      });
+    });
+  </script>
+
 </body>
 </html>
+
+
+
+
+
+
+
 
 
 
